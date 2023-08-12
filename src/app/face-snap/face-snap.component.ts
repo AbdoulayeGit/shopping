@@ -10,14 +10,50 @@ export class FaceSnapComponent {
   imageUrl!: string
   description!: string;
   createdDate!: Date;
-  snpas!: number;
+  like!: number;
+  buttonText!: string;
+  //liked!: boolean;
 
   ngOnInit(){
+
     this.title = "Luffy";
     this.imageUrl = "./assets/MjAyMDExNjM1YzM2YmMwMDFhMWU4OGIyZWZmZWE4NDFjNjE1OGM.webp"
-    this.description = "Le pirate qui à manger le fruit du Gum-Gum";
+    this.description = "Le pirate qui a mangé le fruit du Gum-Gum";
     this.createdDate = new Date();
-    this.snpas = 0;
+    this.like = 0;
+    this.buttonText = "J'aime";
+    //this.liked = false;
+
+    }
+
+    // 1ère méthode tout est ce qui est en commentaire
+/* onLike(){
+
+  if(this.snapped){ //if true
+    this.like--;
+    this.buttonText = "J'aime";
+    this.snapped = false; // change to false to enter the else
+  }else{
+    this.like++;
+    this.buttonText = "J'aime" + "  👍";
+    this.snapped = true; // change to true to enter the if
   }
 
+} */
+
+// 2ème méthode
+onLikeClick(){
+
+  if (this.buttonText == "J'aime") {
+    this.like++;
+    this.buttonText = "J'aime"  + " 👍"; 
+  } else {
+    this.like--;
+    this.buttonText = "J'aime";
+  }
+        
 }
+      
+      
+}
+
