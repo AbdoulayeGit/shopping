@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FaceSnap } from '../Models/face-snap-model';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent {
+
+  @Input() facesnap!: FaceSnap; // très important pour pouvoir l'injecter ailleurs
+
   title!: string;
   imageUrl!: string
   description!: string;
@@ -28,7 +32,7 @@ export class FaceSnapComponent {
 
     // 1ère méthode tout est ce qui est en commentaire
 /* onLike(){
-
+  // ne pas oublier de modifier this.like par this.facesnap.like
   if(this.snapped){ //if true
     this.like--;
     this.buttonText = "J'aime";
@@ -45,15 +49,14 @@ export class FaceSnapComponent {
 onLikeClick(){
 
   if (this.buttonText == "J'aime") {
-    this.like++;
+    this.facesnap.like++;
     this.buttonText = "J'aime"  + " 👍"; 
   } else {
-    this.like--;
+    this.facesnap.like--;
     this.buttonText = "J'aime";
   }
         
 }
-      
       
 }
 

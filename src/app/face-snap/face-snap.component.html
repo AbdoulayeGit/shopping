@@ -6,14 +6,14 @@
 </head>
 
 <div class="face-snap-card">
-    <h1>{{title}}</h1>
-    <img [src]="imageUrl" [alt]="title">
-    <p>{{description}}</p>
-    <p>{{createdDate}}</p>
+    <h1>{{facesnap.title}}</h1>
+    <img [src]="facesnap.imageUrl" [alt]="title">
+    <p>{{facesnap.description}}</p>
+    <p>{{facesnap.createdDate}}</p>
     <p>
         <button (click)="onLikeClick()"> <!-- (click)="onSnapped()" --> {{buttonText}} </button>
     </p>
-    <p>Like {{like}} </p>
+    <p>Like {{facesnap.like}} </p>
 </div>
 
 
