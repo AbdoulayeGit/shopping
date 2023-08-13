@@ -10,10 +10,10 @@
 </div>
 <div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'J\'aime' + '👍' }">
     <h1>{{facesnap.title}}</h1>
-    <img [src]="facesnap.imageUrl" [alt]="title">
+    <img [src]="facesnap.imageUrl" [alt]="facesnap.title">
     <p>{{facesnap.description}}</p>
     <p *ngIf="facesnap.memberShip"> Ce pirate appartient au groupe de {{facesnap.memberShip}} </p>
-    <p>{{facesnap.createdDate}}</p>
+    <p>{{facesnap.createdDate | date}}</p>
     <p>
         <button (click)="onLikeClick()"> <!-- (click)="onSnapped()" --> {{buttonText}} </button>
     </p>

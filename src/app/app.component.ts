@@ -8,13 +8,48 @@ import { FaceSnap } from './Models/face-snap-model';
 })
 export class AppComponent {
 
+  faceSnaps!: FaceSnap[];
+
   mysnap!: FaceSnap;
   mysecondsnap!: FaceSnap;
   mythirdsnap!: FaceSnap;
   myfourthsnap!: FaceSnap;
 
   ngOnInit(){
-    this.mysnap = new FaceSnap(
+
+    this.faceSnaps = [
+      {    title: 'Luffy',
+      description: "Le pirate qui a mangé le fruit du Gum-Gum",
+      imageUrl: "./assets/MjAyMDExNjM1YzM2YmMwMDFhMWU4OGIyZWZmZWE4NDFjNjE1OGM.webp" ,
+      createdDate: new Date(),
+      memberShip: "Chapeau de Paille",
+      like: 0},
+      {
+        title: "Zozo",
+        description: "Le chasseur de prime",
+        imageUrl: "./assets/roronoa-zoro-roi-des-enfers-one-piece-forme-technique.png",
+        createdDate: new Date(),
+        memberShip: "Chapeau de Paille",
+        like: 0
+      },
+      {
+        title: "Ace",
+        description: "Le pirate qui a mangé le fruit du Mero Mero",
+        imageUrl: "./assets/ace-one-piece-1.jpeg",
+        createdDate: new Date(),
+        like: 0
+      },
+      {
+        title: "Law",
+        description: "Le pirate qui a mangé le fruit du Bistouri",
+        imageUrl: "./assets/trafalgar-law-polar-tang-one-piece-b6ba8203c53bf55f63d86fd0c29952de.jpeg",
+        createdDate: new Date(),
+        like: 0
+      }
+    ]
+
+
+    /* this.mysnap = new FaceSnap(
       "Zoro",
       "./assets/roronoa-zoro-roi-des-enfers-one-piece-forme-technique.png",
       "Le chasseur de prime",
@@ -46,7 +81,7 @@ export class AppComponent {
       "Le pirate qui a mangé le fruit du Bistouri",
       new Date(),
       0
-    )
+    ) */
   }
 
 }
