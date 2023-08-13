@@ -5,15 +5,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<div class="face-snap-card">
+<div>
+    
+</div>
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'J\'aime' + '👍' }">
     <h1>{{facesnap.title}}</h1>
     <img [src]="facesnap.imageUrl" [alt]="title">
     <p>{{facesnap.description}}</p>
+    <p *ngIf="facesnap.memberShip"> Ce pirate appartient au groupe de {{facesnap.memberShip}} </p>
     <p>{{facesnap.createdDate}}</p>
     <p>
         <button (click)="onLikeClick()"> <!-- (click)="onSnapped()" --> {{buttonText}} </button>
     </p>
-    <p>Like {{facesnap.like}} </p>
+    <span [ngStyle]="{'color': colored ? 'blue' : ''}">Like {{facesnap.like}} </span>
 </div>
 
 

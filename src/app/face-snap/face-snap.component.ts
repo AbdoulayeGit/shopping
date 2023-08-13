@@ -7,7 +7,7 @@ import { FaceSnap } from '../Models/face-snap-model';
   styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent {
-
+  colored = false;
   @Input() facesnap!: FaceSnap; // très important pour pouvoir l'injecter ailleurs
 
   title!: string;
@@ -19,6 +19,7 @@ export class FaceSnapComponent {
   //liked!: boolean;
 
   ngOnInit(){
+
 
     this.title = "Luffy";
     this.imageUrl = "./assets/MjAyMDExNjM1YzM2YmMwMDFhMWU4OGIyZWZmZWE4NDFjNjE1OGM.webp"
@@ -50,13 +51,18 @@ onLikeClick(){
 
   if (this.buttonText == "J'aime") {
     this.facesnap.like++;
-    this.buttonText = "J'aime"  + " 👍"; 
-  } else {
+    this.colored = true;
+    this.buttonText = "J'aime"  + "👍"; 
+    
+  } else{
     this.facesnap.like--;
     this.buttonText = "J'aime";
+    this.colored = false;
   }
-        
 }
-      
+/* onChange(){
+  if (this.colored) {
+    this.colored = false;
+  }else this.colored = true;
+} */
 }
-

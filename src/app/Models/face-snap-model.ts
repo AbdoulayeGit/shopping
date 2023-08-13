@@ -24,7 +24,8 @@ export class FaceSnap{
                 public imageUrl: string,
                 public description: string,
                 public createdDate: Date,
-                public like: number
+                public like: number,
+                public memberShip?: string
         ){}
 
         // I am about to sleep, tomorrow i will implement this type to the Appcomponent
