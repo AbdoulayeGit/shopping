@@ -1,7 +1,5 @@
 // Créer un dossier model puis fichier facesnap.ts dans lequel on crée une classe pour pouvoir facilement instancier nos facesnpas
 
-import { publishFacade } from "@angular/compiler";
-
 // methode classique mais trop surchargée
 export class FaceSnap{
  /* 
@@ -25,6 +23,8 @@ export class FaceSnap{
                 public description: string,
                 public createdDate: Date,
                 public like: number,
+                public numberOfBerry: number,
+                public strenghPercent: number,
                 public memberShip?: string
         ){}
 

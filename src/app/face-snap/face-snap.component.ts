@@ -8,6 +8,7 @@ import { FaceSnap } from '../Models/face-snap-model';
 })
 export class FaceSnapComponent {
   colored = false;
+  
   @Input() facesnap!: FaceSnap; // très important pour pouvoir l'injecter ailleurs
 
   buttonText!: string;
@@ -19,13 +20,15 @@ export class FaceSnapComponent {
     }
     
 onLikeClick(){
-
+  
   if (this.buttonText == "J'aime") {
+    alert(`Tu aimes bien ${this.facesnap.title} !`);
     this.facesnap.like++;
     this.colored = true;
     this.buttonText = "J'aime"  + "👍"; 
     
   } else{
+    alert(`Ooh tu n'aimes plus ${this.facesnap.title} !`);
     this.facesnap.like--;
     this.buttonText = "J'aime";
     this.colored = false;
