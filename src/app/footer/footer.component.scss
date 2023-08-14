@@ -1,0 +1,29 @@
+
+footer{
+box-sizing: border-box;
+box-shadow: 2px 10px 30px 20px rgb(230, 230, 244);
+height: auto;
+img{
+    width: 150px;
+    margin: 0 auto;
+}
+text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    
+   
+}
+
+.fixed{
+position: sticky;
+bottom: 0;
+width: 100%;
+transition: 0,4 linear;
+}
+
+.notFixed{
+position: static;
+width: auto;
+margin: 5px 5px;
+}

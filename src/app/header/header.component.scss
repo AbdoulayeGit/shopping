@@ -1,0 +1,100 @@
+a{
+    color: black !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(146, 142, 142);
+        opacity: 1; /* Firefox */
+      }
+
+      .fixed{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        margin-top: 30px;
+        }
+        
+        .notFixed{
+        position: static;
+        bottom: 0px;
+        transition: 0,2 linear;
+    
+        }
+
+        .nav-link{
+            position: relative;
+            
+        }
+
+        .nav-link .tooltiptext{
+            visibility: hidden;
+            width: 300px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 0;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+
+        }
+
+        .nav-link .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 45%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #e30f0f transparent transparent transparent;
+          }
+
+          @media screen and (max-width: 1000px) {
+
+            .nav-item{
+                text-align: center; // pour centrer un élément en display inline-block mettre son à parent text align center
+            }
+            .nav-link{
+                
+                position: relative;
+                display: inline-block; 
+                margin: 3px;
+        
+            }
+            .nav-link .tooltiptext{
+               width: 170px;
+               bottom: 0;
+               left: 100%;
+               margin-left: 10px;
+               
+    
+            }
+    
+            .nav-link .tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -5px;
+                margin-top: -5px;
+                border-style: solid;
+                border-width: 5px;
+                border-color: transparent #555 transparent transparent;
+              }
+   
+          }
+
+          .nav-link:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+
+            .fixed{
+
+                height: 300px;
+                }
+          }

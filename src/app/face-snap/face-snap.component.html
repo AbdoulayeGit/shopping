@@ -1,8 +1,10 @@
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
 </head>
 
 <div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'J\'aime' + '👍' }">
@@ -13,7 +15,7 @@
     <p> Publié le {{facesnap.createdDate | date:  'dd/MM/yy, à HH:mm' }}</p>
     <p>Il a une prime de <span [style.color]="'blue'">{{facesnap.numberOfBerry | currency: 'ß':'symbol': '9.0-0'}}</span> et un pourcentage de force équivaut à <span [style.color]="'blue'">{{facesnap.strenghPercent | percent: '1.0-1'}}</span></p>
     <p>
-        <button (click)="onLikeClick()"> <!-- (click)="onSnapped()" --> {{buttonText}} </button>
+        <button [ngStyle]="{'color': colored ? 'violet' : ''}" (click)="onLikeClick()"> {{buttonText}} </button>
     </p>
     <span [ngStyle]="{'color': colored ? 'blue' : ''}">Like {{facesnap.like}} </span>
 </div>
