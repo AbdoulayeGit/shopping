@@ -15,7 +15,7 @@
     <p> Publié le {{facesnap.createdDate | date:  'dd/MM/yy, à HH:mm' }}</p>
     <p>Il a une prime de <span [style.color]="'blue'">{{facesnap.numberOfBerry | currency: 'ß':'symbol': '9.0-0'}}</span> et un pourcentage de force équivaut à <span [style.color]="'blue'">{{facesnap.strenghPercent | percent: '1.0-1'}}</span></p>
     <p>
-        <button (click)="onLikeClick()"> <!-- (click)="onSnapped()" --> {{buttonText}} </button>
+        <button [ngStyle]="{'color': colored ? 'black' : ''}" (click)="onLikeClick()"> {{buttonText}} </button>
     </p>
     <span [ngStyle]="{'color': colored ? 'blue' : ''}">Like {{facesnap.like}} </span>
 </div>
