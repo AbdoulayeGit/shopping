@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../Models/face-snap-model';
+import { FaceSnapsService } from '../services/face-snap-services';
 
 @Component({
   selector: 'app-face-snap-list',
@@ -8,47 +9,12 @@ import { FaceSnap } from '../Models/face-snap-model';
 })
 export class FaceSnapListComponent {
   faceSnaps!: FaceSnap[];
+
+  constructor(private facesnapService: FaceSnapsService){};
   
   ngOnInit(){
 
-      this.faceSnaps = [
-      {    title: 'Luffy',
-      description: "Le pirate qui a mangé le fruit du Gum-Gum",
-      imageUrl: "./assets/MjAyMDExNjM1YzM2YmMwMDFhMWU4OGIyZWZmZWE4NDFjNjE1OGM.webp" ,
-      createdDate: new Date(),
-      memberShip: "Chapeau de Paille",
-      numberOfBerry: 500000000,
-      strenghPercent: 0.759,
-      like: 0},
-      {
-        title: "Zoro",
-        description: "Le chasseur de prime",
-        imageUrl: "./assets/roronoa-zoro-roi-des-enfers-one-piece-forme-technique.png",
-        createdDate: new Date(),
-        memberShip: "Chapeau de Paille",
-        numberOfBerry: 250000000,
-        strenghPercent: 0.705,
-        like: 0
-      },
-      {
-        title: "Ace",
-        description: "Le pirate qui a mangé le fruit du Mero Mero",
-        imageUrl: "./assets/ace-one-piece-1.jpeg",
-        createdDate: new Date(),
-        numberOfBerry: 300000000,
-        strenghPercent: 0.655,
-        like: 0
-      },
-      {
-        title: "Law",
-        description: "Le pirate qui a mangé le fruit du Bistouri",
-        imageUrl: "./assets/trafalgar-law-polar-tang-one-piece-b6ba8203c53bf55f63d86fd0c29952de.jpeg",
-        createdDate: new Date(),
-        numberOfBerry: 350000000,
-        strenghPercent: 0.608,
-        like: 0
-      }
-    ]
+    this.faceSnaps = this.facesnapService.getAllFaceSnaps();
 
 
     /* this.mysnap = new FaceSnap(

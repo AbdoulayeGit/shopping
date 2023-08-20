@@ -18,7 +18,8 @@ export class FaceSnap{
   } */
 
   //méthode simplifié et courte
-    constructor(public title: string, 
+    constructor(public id: number,
+                public title: string, 
                 public imageUrl: string,
                 public description: string,
                 public createdDate: Date,

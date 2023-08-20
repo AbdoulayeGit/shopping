@@ -57,6 +57,11 @@ a{
 
           @media screen and (max-width: 1000px) {
 
+            header{
+                position: static !important;
+                margin: 0 !important;
+            }
+
             .nav-item{
                 text-align: center; // pour centrer un élément en display inline-block mettre son à parent text align center
             }
