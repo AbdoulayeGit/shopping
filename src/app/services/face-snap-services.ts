@@ -55,23 +55,23 @@ export class FaceSnapsService {
         return this.faceSnaps;
     }
 
-    getFaceSnapById(faceSnapId: number): FaceSnap {
+    getFaceSnapById(faceSnapId: number): void {
       const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
-      if (!faceSnap) {
-          throw new Error('FaceSnap not found!');
+      if (faceSnap) {
+          faceSnap.like++;
       } else {
-          return faceSnap;
+          throw new Error('FaceSnap not found!');
       }
     }
 
-    unsnapFaceSnapById(faceSnapId: number): FaceSnap {
+    unsnapFaceSnapById(faceSnapId: number): void {
         const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
         if (faceSnap) {
             faceSnap.like--;
         } else {
             throw new Error('FaceSnap not found!');
         }
-        return faceSnap;
+        
     }
 
 }
