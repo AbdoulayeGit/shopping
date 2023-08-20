@@ -26,13 +26,13 @@ onLikeClick(){
   
   if (this.buttonText == "J'aime") {
     alert(`Tu aimes bien ${this.facesnap.title} !`);
-    this.facesnapService.getFaceSnapById(this.facesnap.id);
+    this.facesnapService.snapFacesnap((this.facesnap.id), "J'aime");
     this.colored = true;
     this.buttonText = "J'aime"  + "👍"; 
     
   } else{
     alert(`Ooh tu n'aimes plus ${this.facesnap.title} !`);
-    this.facesnapService.unsnapFaceSnapById(this.facesnap.id);
+    this.facesnapService.snapFacesnap(this.facesnap.id, "J'aime pas ");
     this.buttonText = "J'aime";
     this.colored = false;
   }
