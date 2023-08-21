@@ -12,7 +12,7 @@ export class HeaderComponent {
   isDisabled: boolean = true;
 
   share(){
-    alert("il faut liker un facesnap avant de partager");
+    // alert("il faut liker un facesnap avant de partager");
     
   }
 

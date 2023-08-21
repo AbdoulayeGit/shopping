@@ -9,6 +9,8 @@ import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import { FooterComponent } from './footer/footer.component';
     FaceSnapComponent,
     FaceSnapListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NgbModule
   ],
   providers: [

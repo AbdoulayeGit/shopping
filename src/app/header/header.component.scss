@@ -1,5 +1,15 @@
 a{
     color: black !important;
+    
+    &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.active {
+  color: #666;
+  text-decoration: underline;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
