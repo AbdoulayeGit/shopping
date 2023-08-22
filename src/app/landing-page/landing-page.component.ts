@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent {
 
+  userEmail!: string;
+  userLastname!: string;
+  userFirstname!: string;
   constructor(private route: Router){}
 
   ngOnInit(){
@@ -17,5 +21,7 @@ export class LandingPageComponent {
   onContinue(): void{
     this.route.navigateByUrl('facesnaps')
   }
-
+  displayUserEmail(form: NgForm) {
+    console.log(form.value);
+  }
 }

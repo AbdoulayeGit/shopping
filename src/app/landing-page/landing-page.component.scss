@@ -1,13 +1,10 @@
 .landing-block {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+   text-align: center;
+   margin-top: 10px; 
   }
   
   .landing-links {
-    width: 100%;
-    text-align: center;
+   
   }
 
   button {
@@ -16,12 +13,39 @@
     padding: 5px 10px;
     border: none;
     box-shadow: lightgray 3px 3px 7px;
-    margin-right: 20px;
+    margin-top: 20px;
     outline: none;
     font-size: 20px;
     font-weight: 500;
     &:active {
       transform: translate(1px, 1px);
       box-shadow: lightgray 0 0 5px;
+    }
+  }
+
+  button:hover{
+    background-color: aqua;
+  }
+
+  .champs{
+    margin: 15px;
+  }
+
+  @media screen and (max-width: 1000px){
+    .landing-block {
+
+      margin-top: 10px; 
+      img{
+        width: auto;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 540px){
+    .landing-block {
+      img{
+        width: 400px; height: 400px;
+      }
     }
   }

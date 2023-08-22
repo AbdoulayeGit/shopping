@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     FaceSnapListComponent,
     HeaderComponent,
     FooterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SingleFaceSnapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-FR'}
