@@ -18,7 +18,7 @@
             <a class="nav-link active "  aria-current="page" href="#" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nous contacter <span class="tooltiptext">contact@gmail.com</span> </a>
+            <a class="nav-link">Nous contacter <span class="tooltiptext">contact@gmail.com</span> </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " (mouseover)="share()" aria-current="page" href="#" routerLink="facesnaps" routerLinkActive="active">voir les facesnaps</a>
@@ -31,7 +31,7 @@
 			</button>
 			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
 				<button ngbDropdownItem routerLink="create">Ajouter un facenap</button>
-				<button ngbDropdownItem>Supprimer un facesnap</button>
+				<button ngbDropdownItem routerLink="/facesnaps">Supprimer un facesnap</button>
 				<button ngbDropdownItem>Modifier un facesnap</button>
 			</div>
 		</div>

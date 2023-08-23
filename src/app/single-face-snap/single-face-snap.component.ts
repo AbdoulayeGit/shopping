@@ -11,9 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SingleFaceSnapComponent {
 
+
   colored = false;
   
-   facesnap!: FaceSnap; // plus besoin du input
+  facesnap!: FaceSnap; // plus besoin du input
 
   buttonText!: string;
 
@@ -26,7 +27,7 @@ export class SingleFaceSnapComponent {
 
     const snapId = +this.route.snapshot.params['id'];
     this.facesnap = this.facesnapService.getFacesnapById(snapId);
-  
+    
     }
     
 onLikeClick(){
@@ -44,4 +45,11 @@ onLikeClick(){
     this.colored = false;
   }
 }
+
+/* suppr() {
+this.facesnapService.deleteLastFaceSnap();
+} */
+
+
+
 }

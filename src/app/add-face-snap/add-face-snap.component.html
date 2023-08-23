@@ -15,15 +15,30 @@
             </textarea>
         </div>
         <div class="form-group">
-            <label for="location">memberShip</label>
-            <input id="location" type="text" formControlName="memberShip">
+            <label for="memberShip">memberShip</label>
+            <input id="memberShip" type="text" formControlName="memberShip">
         </div>
         <div class="form-group">
-            <label for="location">numberOfBerry</label>
-            <input id="location" type="text" formControlName="memberShip">
+            <label for="numberOfBerry">numberOfBerry</label>
+            <input id="numberOfBerry" type="text" formControlName="numberOfBerry">
+        </div>
+        <div class="form-group">
+            <label for="strenghPercent">strenghPercent</label>
+            <input id="strenghPercent" type="text" formControlName="strenghPercent">
         </div>
         <div class="action-buttons">
-            <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Ajouter</button>
         </div>
+
+        <div class="face-snap-card" *ngIf="previewFacesnap$ | async as facesnap">
+            <h1>{{facesnap.title | uppercase }}</h1>
+            <button routerLink="/facesnaps">Retour</button>
+            <img [src]="facesnap.imageUrl" [alt]="facesnap.title">
+            <p>{{facesnap.description}}</p>
+            <p *ngIf="facesnap.memberShip === 'law'"> Ce pirate appartient au groupe de {{facesnap.memberShip}} </p>
+            <p> Publié le {{facesnap.createdDate | date:  'dd/MM/yy, à HH:mm' }}</p>
+            <p>Il a une prime de <span [style.color]="'blue'">{{facesnap.numberOfBerry | currency: 'ß':'symbol': '6.0-0'}}</span> et un pourcentage de force équivaut à <span [style.color]="'blue'">{{facesnap.strenghPercent | percent: '1.0-1'}}</span></p>
+        </div>
+        
     </form>
 </div>

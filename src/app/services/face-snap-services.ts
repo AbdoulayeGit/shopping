@@ -1,6 +1,7 @@
 
 import { Injectable, Input } from '@angular/core';
 import { FaceSnap } from '../Models/face-snap-model';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +71,24 @@ export class FaceSnapsService {
      snapType === "J'aime" ? facesnap.like++ : facesnap.like--;
     }
 
+    addFaceSnap(formvalue: {title: string, description: string, imageUrl: string, memberShip: string, numberOfBerry: number, strenghPercent: number}){
+      const facesnap = {...formvalue,
+        createdDate: new Date(),
+        like: 0,
+        id: this.faceSnaps[this.faceSnaps.length -1].id + 1
+      }
+      this.faceSnaps.push(facesnap);
+    }
+
+    deleteLastFaceSnap(){
+      this.faceSnaps.pop();
+    }
+
+    deleteOneFaceSnap(faceSnapId: number): FaceSnap[]{
+      const face = this.faceSnaps.filter(facesnap => facesnap.id !== faceSnapId);
+      this.faceSnaps = face
+      return this.faceSnaps;
+    }
 
     
     /* unsnapFaceSnapById(faceSnapId: number): void {

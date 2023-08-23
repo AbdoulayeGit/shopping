@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../Models/face-snap-model';
 import { FaceSnapsService } from '../services/face-snap-services';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
@@ -18,7 +19,7 @@ export class FaceSnapComponent {
   buttonText!: string;
 
   constructor(private facesnapService: FaceSnapsService, 
-              private route: Router){}
+              private route: Router, private location: Location){}
 
   ngOnInit(){
 
@@ -45,6 +46,14 @@ onLikeClick(){
 onViewFacesnap(){
 this.route.navigateByUrl(`facesnaps/${this.facesnap.id}`)
 }
-}
+
+deleteOnefaceSnap(){
+  this.facesnapService.deleteOneFaceSnap(this.facesnap.id);
+  this.route.navigateByUrl(''); this.route.navigateByUrl('/facesnaps');
+
+	}
+
+  }
+
 
 
